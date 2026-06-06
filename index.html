@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#ecfeff;">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#ecfeff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asep Sulaeman — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    color-scheme: light only;
+    --cyan-hero:   #0891b2;
+    --cyan-mid:    #06b6d4;
+    --cyan-accent: #22d3ee;
+    --cyan-soft:   #67e8f9;
+    --cyan-pale:   #cffafe;
+    --cyan-bg:     #ecfeff;
+    --cyan-card:   #f0fdff;
+    --cyan-border: #a5f3fc;
+    --cyan-text:   #0e7490;
+    --cyan-body:   #0ea5c9;
+    --cyan-light:  #38bdf8;
+    --white:       #ffffff;
+  }
+
+  html { scroll-behavior: smooth; background: #ecfeff !important; }
+
+  body {
+    font-family: 'Nunito', 'Trebuchet MS', sans-serif;
+    background: var(--cyan-bg);
+    color: var(--cyan-body);
+    line-height: 1.6;
+    font-size: 15.5px;
+  }
+
+  h1,h2,h3,h4,p,li,span,div,a { color: inherit; }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #0891b2 0%, #06b6d4 55%, #22d3ee 100%);
+    color: var(--white);
+    padding: 56px 40px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content:''; position:absolute;
+    top:-80px; right:-80px;
+    width:320px; height:320px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.1);
+  }
+  header::after {
+    content:''; position:absolute;
+    bottom:-50px; left:40px;
+    width:200px; height:200px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.06);
+  }
+
+  .header-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 36px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 10px;
+  }
+  .header-name {
+    font-family: 'Nunito', sans-serif; font-weight: 900;
+    font-size: 46px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.08;
+    margin-bottom: 4px;
+  }
+  .header-name span { color: var(--cyan-pale); }
+  .header-bio {
+    font-size: 14px;
+    color: rgba(255,255,255,0.82);
+    max-width: 480px;
+    line-height: 1.75;
+    margin-top: 14px;
+  }
+
+  .contact-pills { display:flex; flex-direction:column; gap:10px; align-items:flex-end; }
+  .pill {
+    display:flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.3);
+    border-radius:30px; padding:8px 18px;
+    font-size:13px; color:var(--white);
+    text-decoration:none; white-space:nowrap;
+    transition:background 0.2s;
+    font-family:'Nunito',sans-serif;
+  }
+  .pill:hover { background:rgba(255,255,255,0.28); }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--cyan-border);
+    position: sticky; top:0; z-index:100;
+    box-shadow: 0 1px 10px rgba(6,182,212,0.12);
+  }
+  .nav-inner { max-width:880px; margin:0 auto; display:flex; padding:0 40px; }
+  .nav-inner a {
+    text-decoration:none; font-size:12px; font-weight:800;
+    color:var(--cyan-mid); padding:15px 20px;
+    letter-spacing:1.2px; text-transform:uppercase;
+    border-bottom:2px solid transparent;
+    transition:color 0.2s, border-color 0.2s;
+    font-family:'Nunito',sans-serif;
+  }
+  .nav-inner a:hover { color:var(--cyan-hero); border-bottom-color:var(--cyan-hero); }
+
+  /* ── MAIN ── */
+  main { max-width:880px; margin:0 auto; padding:0 40px 60px; }
+
+  /* ── SECTION ── */
+  section { padding:50px 0; border-bottom:1px solid var(--cyan-border); }
+  section:last-child { border-bottom:none; }
+
+  .section-label { display:flex; align-items:center; gap:14px; margin-bottom:28px; }
+  .section-label h2 {
+    font-family:'Nunito',sans-serif; font-weight:900;
+    font-size:22px; font-weight:700;
+    color:var(--cyan-hero); letter-spacing:-0.2px;
+    white-space:nowrap;
+  }
+  .section-line { flex:1; height:1px; background:var(--cyan-border); }
+  .section-dot { width:8px; height:8px; border-radius:50%; background:var(--cyan-mid); flex-shrink:0; }
+
+  /* ── ABOUT ── */
+  .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .about-card {
+    background:var(--white); border:1px solid var(--cyan-border);
+    border-radius:12px; padding:22px 24px;
+    font-size:14px; color:var(--cyan-body); line-height:1.75;
+    transition:box-shadow 0.2s;
+  }
+  .about-card:hover { box-shadow:0 4px 18px rgba(6,182,212,0.1); }
+  .about-card strong { color:var(--cyan-hero); font-weight:700; }
+
+  /* ── EXP ── */
+  .exp-grid { display:flex; flex-direction:column; gap:18px; }
+  .exp-card {
+    background:var(--white); border:1px solid var(--cyan-border);
+    border-radius:12px; padding:22px 24px;
+    display:grid; grid-template-columns:145px 1fr; gap:22px;
+    transition:box-shadow 0.2s, border-color 0.2s;
+  }
+  .exp-card:hover { box-shadow:0 6px 22px rgba(6,182,212,0.12); border-color:var(--cyan-soft); }
+
+  .exp-period { font-size:12px; font-weight:700; color:var(--cyan-mid); line-height:1.5; padding-top:3px; }
+  .exp-company { font-size:11.5px; color:var(--cyan-light); font-weight:400; margin-top:5px; line-height:1.4; }
+
+  .exp-role { font-size:16px; font-weight:700; color:var(--cyan-hero); margin-bottom:10px; }
+  .exp-list { list-style:none; display:flex; flex-direction:column; gap:6px; }
+  .exp-list li {
+    font-size:14px; color:var(--cyan-body);
+    padding-left:16px; position:relative; line-height:1.6;
+  }
+  .exp-list li::before {
+    content:''; position:absolute; left:0; top:9px;
+    width:5px; height:5px; border-radius:50%; background:var(--cyan-soft);
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .skill-card {
+    background:var(--white); border:1px solid var(--cyan-border);
+    border-radius:12px; padding:20px 22px;
+    display:flex; gap:16px; align-items:flex-start;
+    transition:box-shadow 0.2s, border-color 0.2s;
+  }
+  .skill-card:hover { box-shadow:0 4px 16px rgba(6,182,212,0.12); border-color:var(--cyan-soft); }
+  .skill-num {
+    font-family:'Nunito',sans-serif; font-weight:900;
+    font-size:32px; font-weight:700; color:var(--cyan-pale); line-height:1; min-width:32px;
+  }
+  .skill-title { font-size:14px; font-weight:700; color:var(--cyan-hero); margin-bottom:6px; }
+  .skill-desc { font-size:13px; color:var(--cyan-body); line-height:1.6; }
+
+  /* ── ADDITIONAL ── */
+  .tags-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(195px,1fr)); gap:12px; }
+  .tag-card {
+    background:var(--white); border:1px solid var(--cyan-border);
+    border-radius:10px; padding:14px 16px;
+    display:flex; align-items:center; gap:12px;
+    transition:border-color 0.2s, box-shadow 0.2s;
+  }
+  .tag-card:hover { border-color:var(--cyan-mid); box-shadow:0 2px 12px rgba(6,182,212,0.1); }
+  .tag-icon {
+    font-size:20px; width:38px; height:38px;
+    background:var(--cyan-bg); border-radius:8px;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .tag-name { font-size:14px; font-weight:700; color:var(--cyan-hero); margin-bottom:2px; }
+  .tag-sub { font-size:12px; color:var(--cyan-light); }
+
+  /* ── PROJECTS ── */
+  .projects-note {
+    background:var(--white); border:1px solid var(--cyan-border);
+    border-radius:12px; padding:24px 28px;
+    font-size:14px; color:var(--cyan-body); line-height:1.75;
+    text-align:center;
+  }
+  .project-badges { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:16px; }
+  .badge {
+    background:var(--cyan-bg); border:1px solid var(--cyan-border);
+    border-radius:20px; padding:6px 16px;
+    font-size:13px; font-weight:700; color:var(--cyan-hero);
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .contact-card {
+    background:var(--white); border:1px solid var(--cyan-border);
+    border-radius:12px; padding:20px;
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    text-decoration:none; color:var(--cyan-hero);
+    transition:box-shadow 0.2s, border-color 0.2s;
+  }
+  .contact-card:hover { box-shadow:0 4px 18px rgba(6,182,212,0.14); border-color:var(--cyan-mid); }
+  .contact-icon { font-size:26px; }
+  .contact-label { font-size:14px; font-weight:700; color:var(--cyan-hero); }
+  .contact-sub { font-size:12px; color:var(--cyan-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background:linear-gradient(135deg,#0891b2 0%,#06b6d4 100%);
+    color:rgba(255,255,255,0.75);
+    text-align:center; padding:26px 20px;
+    font-size:13px; letter-spacing:0.5px;
+    font-family:'Nunito',sans-serif;
+  }
+  footer span { color:var(--white); font-weight:700; }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width:6px; background:#cffafe; }
+  ::-webkit-scrollbar-thumb { background:#67e8f9; border-radius:4px; }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:640px){
+    header { padding:36px 20px 32px; }
+    .header-inner { grid-template-columns:1fr; }
+    .header-name { font-size:34px; }
+    .contact-pills { flex-direction:row; flex-wrap:wrap; align-items:flex-start; }
+    main { padding:0 20px 48px; }
+    nav { display:none; }
+    .exp-card { grid-template-columns:1fr; gap:10px; }
+    .skills-grid, .about-grid, .contact-grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div>
+      <p class="header-tag">Resume &amp; Portfolio · 2026</p>
+      <h1 class="header-name">Asep <span>Sulaeman</span></h1>
+      <p class="header-bio">
+        Production Operator &amp; IPQC with experience in the automotive and tire manufacturing industries.
+        Skilled in operating blasting, painting, and curing machines, as well as conducting quality inspections.
+        Accustomed to targets, SOPs, quality standards, and dynamic work environments.
+      </p>
+    </div>
+    <div class="contact-pills">
+      <a href="mailto:zeandrn@gmail.com" class="pill">✉ Email</a>
+      <a href="https://wa.me/628977017989" class="pill">💬 WhatsApp</a>
+      <a href="https://x.com/zeandrn" class="pill">𝕏 Twitter / X</a>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#additional">Additional</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">
+      <span class="section-dot"></span>
+      <h2>About Me</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <strong>Professional Background</strong><br>
+        I'm Asep Sulaeman, a Production Operator and IPQC with experience in the automotive and tire manufacturing industries. I have experience operating blasting, painting and curing machines, as well as conducting quality inspections throughout the production process.
+      </div>
+      <div class="about-card">
+        <strong>Business &amp; Entrepreneurship</strong><br>
+        Accustomed to working with targets, SOPs, quality standards and a dynamic work environment. Experience managing a perfume refill business since 2017, responsible for operations, inventory and employee management.
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-label">
+      <span class="section-dot"></span>
+      <h2>Work Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="exp-grid">
+
+      <div class="exp-card">
+        <div>
+          <div class="exp-period">2012 – 2014</div>
+          <div class="exp-company">PT Yutaka Manufacturing Indonesia</div>
+        </div>
+        <div>
+          <div class="exp-role">Assy &amp; Painting Operator</div>
+          <ul class="exp-list">
+            <li>Operated production machines, conveyors and painting machines according to SOPs</li>
+            <li>Conducted in-process quality inspections (IPQC) during production</li>
+            <li>Ensured production output met company quality standards</li>
+            <li>Maintained production targets and occupational safety</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div>
+          <div class="exp-period">2015 – 2016</div>
+          <div class="exp-company">PT Evoluzione Tyres</div>
+        </div>
+        <div>
+          <div class="exp-role">Curing Operator &amp; IPQC</div>
+          <ul class="exp-list">
+            <li>Operated curing machines in accordance with production standards</li>
+            <li>Conducted product quality checks throughout the production process</li>
+            <li>Identified and reported product nonconformities</li>
+            <li>Maintained quality and productivity in line with company targets</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div>
+          <div class="exp-period">2017 – Present</div>
+          <div class="exp-company">Self Employed</div>
+        </div>
+        <div>
+          <div class="exp-role">Owner — Perfume Store</div>
+          <ul class="exp-list">
+            <li>Managed daily operations of a perfume refill business</li>
+            <li>Handled raw material purchasing and inventory management</li>
+            <li>Supervised one employee and maintained service quality</li>
+            <li>Managed product quality, customer service and daily administration</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div>
+          <div class="exp-period">2018 – 2026</div>
+          <div class="exp-company">Web3 Projects</div>
+        </div>
+        <div>
+          <div class="exp-role">Community Contributor</div>
+          <ul class="exp-list">
+            <li>Contributed to international blockchain projects: Manta Network and Polyhedra</li>
+            <li>Collaborated with global communities remotely</li>
+            <li>Actively followed developments in blockchain, Web3 and AI technology</li>
+            <li>Participated in organizing Coinfest Asia 2024 at Nuanu Creative City, Bali</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label">
+      <span class="section-dot"></span>
+      <h2>Skills &amp; Expertise</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-num">01</div>
+        <div>
+          <div class="skill-title">In-Process Quality Control</div>
+          <div class="skill-desc">Monitoring and quality control during the production process to ensure quality standards are met.</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-num">02</div>
+        <div>
+          <div class="skill-title">Quality Inspection</div>
+          <div class="skill-desc">Conducting product quality inspection to identify and prevent product inconsistencies.</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-num">03</div>
+        <div>
+          <div class="skill-title">Visual Inspection</div>
+          <div class="skill-desc">Detecting defects and product inconsistencies through visual inspection according to company standards.</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-num">04</div>
+        <div>
+          <div class="skill-title">Basic Measuring Tools</div>
+          <div class="skill-desc">Using basic measuring tools to ensure product dimensions and specifications are standard.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADDITIONAL SKILLS -->
+  <section id="additional">
+    <div class="section-label">
+      <span class="section-dot"></span>
+      <h2>Additional Skills</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="tags-grid">
+      <div class="tag-card">
+        <div class="tag-icon">🎨</div>
+        <div>
+          <div class="tag-name">Graphic Design</div>
+          <div class="tag-sub">CorelDRAW</div>
+        </div>
+      </div>
+      <div class="tag-card">
+        <div class="tag-icon">🖥️</div>
+        <div>
+          <div class="tag-name">Running Nodes</div>
+          <div class="tag-sub">Linux OS</div>
+        </div>
+      </div>
+      <div class="tag-card">
+        <div class="tag-icon">📊</div>
+        <div>
+          <div class="tag-name">Microsoft Office</div>
+          <div class="tag-sub">Word, Excel, PowerPoint</div>
+        </div>
+      </div>
+      <div class="tag-card">
+        <div class="tag-icon">🚗</div>
+        <div>
+          <div class="tag-name">Driving License</div>
+          <div class="tag-sub">License A &amp; License C</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-label">
+      <span class="section-dot"></span>
+      <h2>Projects &amp; Portfolio</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-note">
+      <p style="color:var(--cyan-body); font-size:14px;">Notable contributions and collaborations across manufacturing, entrepreneurship, and Web3.</p>
+      <div class="project-badges">
+        <span class="badge">🔗 Manta Network</span>
+        <span class="badge">🔗 Polyhedra</span>
+        <span class="badge">🎪 Coinfest Asia 2024</span>
+        <span class="badge">👕 Perfume Store (2017–Present)</span>
+        <span class="badge">🏭 PT Yutaka Manufacturing</span>
+        <span class="badge">🏭 PT Evoluzione Tyres</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">
+      <span class="section-dot"></span>
+      <h2>Keep in Touch</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <a href="https://x.com/" class="contact-card">
+        <span class="contact-icon">𝕏</span>
+        <span class="contact-label">Twitter / X</span>
+        <span class="contact-sub">@zeandrn</span>
+      </a>
+      <a href="mailto:zeandrn@gmail.com" class="contact-card">
+        <span class="contact-icon">✉️</span>
+        <span class="contact-label">Email</span>
+        <span class="contact-sub">zeandrn@gmail.com</span>
+      </a>
+      <a href="https://wa.me/628977017989" class="contact-card">
+        <span class="contact-icon">💬</span>
+        <span class="contact-label">WhatsApp</span>
+        <span class="contact-sub">+62 897 7017 989</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Asep Sulaeman</span> — Production Operator &amp; IPQC · Thank you for visiting and reading my portfolio.</p>
+</footer>
+
+<script>
+  const items = document.querySelectorAll('.exp-card,.skill-card,.tag-card,.about-card,.contact-card,.projects-note');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  items.forEach((el, i) => {
+    el.style.cssText += `opacity:0;transform:translateY(16px);transition:opacity 0.4s ease ${i*0.05}s,transform 0.4s ease ${i*0.05}s`;
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
